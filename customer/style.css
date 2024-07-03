@@ -50,7 +50,7 @@ nav ul li a:active {
     color: #ff1616de;
 }
 
-/* Logo Styles */
+/* Company Logo Styles */
 .logo {
     display: flex;
     align-items: center;
@@ -81,6 +81,7 @@ nav ul li a:active {
     border: 3px solid #194759;
     align-items: center;
     padding: 8px;
+    background-color: #2dad96;
 }
 
 .user-info h3{
@@ -89,7 +90,7 @@ nav ul li a:active {
     margin-right: 30px;
 }
 
-/* Sliding menu */
+/* Sidebar menu */
 .sidebar-menu{
     position: fixed;
     width: 240px;
@@ -103,13 +104,15 @@ nav ul li a:active {
 .sidebar-menu header{
     font-size: 28px;
     font-weight: bold;
-    color: #353535;
+    color: #194759;
     line-height: 70px;
     text-align: center;
     background-color: #7ebfb3;
     user-select: none;
     box-shadow: 0px 2px 4px #689c93;
+    /* border: 1px solid #194759; */
     border-radius: 2px;
+    margin-bottom: 15px;
 }
 
 .sidebar-menu a{
@@ -140,6 +143,7 @@ nav ul li a:active {
     letter-spacing: 1px;
 }
 
+/* .sidebar-menu button */
 #check{
     display: none;
 }
@@ -161,15 +165,15 @@ label #menuBtn, label #cancelBtn{
     transition: all .5s ease;
     text-align: center;
     z-index: 3;
-    background-color: #cecfd0bb;
-}
-
-label #menuBtn:hover, label #cancelBtn:hover {
     background-color: #7ebfb3;
 }
 
+label #menuBtn:hover, label #cancelBtn:hover {
+    background-color: #74aca2cd;
+}
+
 label #menuBtn:active, label #cancelBtn:active {
-    background-color: #9beadb91;
+    background-color: #04cca7;
 }
 
 label #cancelBtn{
@@ -193,44 +197,7 @@ label #cancelBtn{
     visibility: visible;
 }
 
-@media(max-width : 860px){
-    .sidebar-menu{
-        height: auto;
-        width: 70px;
-        left: 0;
-        margin: 100px 0;
-    }
-    header, #menuBtn, #cancelBtn{
-        display: none;
-    }
-
-    span{
-        position: absolute;
-        margin-left: 23px;
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    .sidebar-menu a{
-        height: 60px;
-    }
-
-    .sidebar-menu a i{
-        margin-left: -10px;
-    }
-
-    a:hover {
-        width: 200px;
-        background: inherit;
-    }
-
-    .sidebar-menu a:hover span{
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-/* welcome */
+/* shipment stats dashboard*/
 .dashboard {
     display: flex;
     justify-content: center;
@@ -238,10 +205,10 @@ label #cancelBtn{
     height: 100vh;
 }
 
-.banner {
+.dashboard .banner {
     width: 100%;
     height: 100%;
-    background-image: url('bg.jpg');
+    background-image: url('customer-banner.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -252,7 +219,7 @@ label #cancelBtn{
     position: relative;
 }
 
-.banner::before {
+.dashboard .banner::before {
     content: '';
     position: absolute;
     top: 0;
@@ -262,11 +229,11 @@ label #cancelBtn{
     background: rgba(0, 0, 0, 0.5);
 }
 
-.banner-content {
+.dashboard .banner-content {
     z-index: 1;
 }
 
-.banner-content h1 {
+.dashboard .banner-content h1 {
     font-size: 48px;
     margin-bottom: 20px;
 }
@@ -277,7 +244,7 @@ label #cancelBtn{
     gap: 20px;
 }
 
-.card {
+.stats .card {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 20px;
@@ -286,17 +253,17 @@ label #cancelBtn{
     transition: transform 0.3s ease;
 }
 
-.card:hover {
+.stats .card:hover {
     box-shadow: 0px 4px 12px #e1e1e1;
 }
 
-.card h2 {
+.stats .card h2 {
     margin: 0;
     font-size: 24px;
-    color: #ffeb3b;
+    color: #00ffd0;
 }
 
-.card p {
+.stats .card h3 {
     font-size: 36px;
     margin: 10px 0 0;
     font-weight: bold;
@@ -348,11 +315,16 @@ label #cancelBtn{
     transition: background 0.3s, transform 0.3s;
 }
 
+.content-section .btn:hover {
+    transform: translateY(-3px);
+}
+
 .content-section .btn:active {
     transition: all 0.9ms ease;
     background-color: #04a547;
 }   
 
+/* tracking details section */
 .content-section #trackBtn {
     font-size: 1.4em;
     font-weight: bold;
@@ -376,23 +348,24 @@ label #cancelBtn{
     margin-bottom: 30px;
 }
 
-.package-details th, .package-details td {
-    padding: 12px 15px;
-    border: 1px solid #194759;
+.package-details td {
+    padding: 12px 6px;
+    border: 1px solid #7ebfb3;
     text-align: center;
+    font-size: 16px;
+    background-color: #fff;
+    color: #194759;
+    font-weight: bold;
 }
 
 .package-details th {
+    padding: 12px 5px;
+    border: 1px solid #194759;
+    text-align: center;
     font-size: 18px;
     font-weight: lighter;
     background-color: #194759;
     color: #fff;
-}
-
-.package-details td {
-    background-color: #fff;
-    color: #194759;
-    font-weight: bold;
 }
 
 .action-buttons .btn {
@@ -403,11 +376,65 @@ label #cancelBtn{
     color: #fff;
 }
 
-.content-section .btn:hover {
-    transform: translateY(-3px);
+#saveBtn {
+    margin-bottom: 15px;
 }
 
-/* Modal Styles */
+/* accordion styles */
+.accordion-content {
+    display: none;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.field-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.field {
+    flex: 0 0 46%;
+    padding: 10px 6px;
+    background-color: #fff;
+    border: 1px solid #bebebe;
+    border-radius: 4px;
+}
+
+.field strong {
+    font-weight: bold;
+    color: #000;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.form-group label {
+    font-size: 18px;
+    display: flex;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.form-group input[type="text"] {
+    font-size: 18px;
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #9e9e9ece;
+    border-radius: 4px;
+}
+
+/* modal styles */
 .modal {
     user-select: none;
     display: none; 
@@ -456,58 +483,73 @@ label #cancelBtn{
     background-color: #04a547;
 }
 
-.accordion-content {
+/* History Section */
+.history-container {
     display: none;
-    font-size: 18px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-}
-
-.field-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    background-color: #7ebfb3;
+    border-radius: 8px;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
-.field {
-    flex: 0 0 46%;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #bebebe;
-    border-radius: 4px;
-}
-
-.field strong {
+#viewHistoryBtn{
+    font-size: 1.3em;
     font-weight: bold;
-    color: #000;
-}
-
-.form-group {
-    text-align: left;
-    margin-bottom: 20px;
-    margin-top: 15px;
-    margin-left: 6px;
-    margin-right: 6px;
-}
-
-.form-group label {
-    font-size: 18px;
-    display: flex;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input[type="text"] {
-    font-size: 18px;
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #9e9e9ece;
+    padding: 10px 20px;
+    background-color: #194759;
+    color: #f9f9f9;
+    box-shadow: 0px 2px 6px #194759;
     border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 30px;
 }
 
-#saveBtn {
-    margin-bottom: 15px;
+#viewHistoryBtn:active{
+    transition: all 0.9ms ease;
+    background-color: #04a547;
+}
+
+.history-container .package-details {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.history-container .package-details th, .history-container .package-details td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #8f8f8f94;
+}
+
+.history-container .package-details th {
+    background-color: #194759;
+    color: #fff;
+    font-weight: lighter;
+}
+
+.history-container .package-details td {
+    font-size: 18px;
+    padding: 15px;
+}
+
+.history-container .field-row-container{
+    border: 2px solid #194759;
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px;
+    width: auto;
+    height: fit-content;
+    background-color: #7ebfb3;
+}
+
+.history-container .field-row {
+    justify-content: center;
+    gap: 8px;
+}
+
+.history-container .field {
+    flex: 0 0 47%;
+    border: none;
+    background-color: #7ebfb3;
 }
 
 /* Schedule Pickup Section */
@@ -526,7 +568,20 @@ label #cancelBtn{
 }
 
 #placeOrderBtn {
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #194759;
+    color: #f9f9f9;
+    box-shadow: 0px 2px 6px #194759;
+    border-radius: 4px;
+    cursor: pointer;
     margin-bottom: 30px;
+}
+
+#placeOrderBtn:active{
+    transition: all 0.9ms ease;
+    background-color: #04a547;
 }
 
 .placeOrderPanel .form-row input[type="text"],.placeOrderPanel .form-row input[type="email"], .form-row select {
@@ -569,64 +624,6 @@ label #cancelBtn{
     transform: scale(1.1);
 }
 
-/* History Section */
-.history-container {
-    display: none;
-    background-color: #7ebfb3;
-    border-radius: 8px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-
-#viewHistoryBtn{
-    margin-bottom: 30px;
-}
-
-.history-container .package-details {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.history-container .package-details th, .history-container .package-details td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #8f8f8f94;
-}
-
-.history-container .package-details th {
-    background-color: #194759;
-    color: #fff;
-    font-weight: lighter;
-}
-
-.history-container .package-details td {
-    font-size: 18px;
-    padding: 15px;
-}
-
-.history-container .field-row-container{
-    border: 2px solid #194759;
-    border-radius: 10px;
-    margin-left: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 53vw;
-    height: 35vh;
-    background-color: #7ebfb3;
-}
-
-.history-container .field-row {
-    justify-content: center;
-    gap: 8px;
-}
-
-.history-container .field {
-    flex: 0 0 47%;
-    border: none;
-    background-color: #7ebfb3;
-}
-
 /* Support Section */
 .support-section-body {
     display: flex;
@@ -653,15 +650,30 @@ label #cancelBtn{
 }
 
 .support-bg-image{
-    background-image: url('bg.jpg');
+    background-image: url('customer-support.jpg');
     height: 50vh;
     width: 35vw;
     background-size: cover;
     background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
 }
 
 #contactUsBtn{
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #194759;
+    color: #f9f9f9;
+    box-shadow: 0px 2px 6px #194759;
+    border-radius: 4px;
+    cursor: pointer;
     margin-bottom: 30px;
+}
+
+#contactUsBtn:active{
+    transition: all 0.9ms ease;
+    background-color: #04a547;
 }
 
 #contactUsPanel {
@@ -788,14 +800,6 @@ footer a:active {
         margin: 0.5rem 0;
     }
 
-    footer {
-        max-width: 440px;
-    }
-
-    .footer-buttons {
-        margin-left: -10px;
-    }
-
     .slide-menu {
         width: 90%;
         left: -100%;
@@ -807,5 +811,49 @@ footer a:active {
 
     body.slide-active {
         margin-left: 0;
+    }
+
+    .sidebar-menu {
+        height: auto;
+        width: 70px;
+        left: 0;
+        margin: 100px 0;
+    }
+
+    header, #menuBtn, #cancelBtn {
+        display: none;
+    }
+
+    span {
+        position: absolute;
+        margin-left: 23px;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .sidebar-menu a {
+        height: 60px;
+    }
+
+    .sidebar-menu a i {
+        margin-left: -10px;
+    }
+
+    a:hover {
+        width: 200px;
+        background: inherit;
+    }
+
+    .sidebar-menu a:hover span {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    footer {
+        max-width: 440px;
+    }
+
+    .footer-buttons {
+        margin-left: -10px;
     }
 }

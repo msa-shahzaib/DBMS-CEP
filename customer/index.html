@@ -12,25 +12,29 @@
     <header>
         <nav class='nav-bar'>
             <ul>
-                <li class='logo'><img src="logo.png" alt="">SL Courier</li>
+                <li class='logo'><img src="logo.png" alt="Brand Logo">SL Courier</li>
                 <li><a href="#tracking">Tracking</a></li>
                 <li><a href="#history">History</a></li>
-                <li><a href="#schedule-pickup">Schedule Pickup</a></li>
+                <li><a href="#schedule-pickup">Place Order</a></li>
                 <li><a href="#support">Support</a></li>
             </ul>
+
+            <!-- user profile -->
             <div class="user-info">
-                <img src="logo.png" alt="User Avatar">
+                <img src="avatar.png" alt="User Avatar">
                 <h3>Shahzaib</h3>
             </div>
         </nav>
     </header>
 
+    <!-- menu button -->
     <input type="checkbox" id="check">
     <label for="check">
       <i class="fas fa-bars" id="menuBtn"></i>
       <i class="fas fa-times" id="cancelBtn"></i>
     </label>
 
+    <!-- sidebar menu options -->
     <div class="sidebar-menu">
         <header>Menu</header>
         <a href="#tracking" class="menu-link">
@@ -47,46 +51,52 @@
         </a>
     </div>
     
+    <!-- shipment stats dashboard -->
     <section class="dashboard">
         <div class="banner">
             <div class="banner-content">
-                <h1>Welcome, Shahzaib</h1>
+                <h1>WELCOME SHAHZAIB</h1>
                 <div class="stats">
-                    <div class="card">
+                    <div id="totalShipments" class="card">
                         <h2>Total Shipments</h2>
-                        <p>25</p>
+                        <h3>25</h3>
                     </div>
-                    <div class="card">
+                    <div id="inProgressShipments" class="card">
                         <h2>In Progress</h2>
-                        <p>3</p>
+                        <h3>4</h3>
                     </div>
-                    <div class="card">
+                    <div id="completedShipments" class="card">
                         <h2>Completed</h2>
-                        <p>21</p>
+                        <h3>21</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- tracking section -->
     <section id="tracking" class="content-section">
         <h2>Track Shipments</h2>
         <div class="search-section">
             <input type="search" placeholder="Enter tracking number">
-            <button class="btn" id="trackBtn">Track</button>
+            <button id="trackBtn" class="btn">Track</button>
         </div>
+
+        <!-- package details container -->
         <table class="package-details">
             <tr>
                 <th>Package ID</th>
-                <th>Delivery Address</th>
+                <th>Recipient Name</th>
                 <th>Driver ID</th>
+                <th>Driver Name</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
             <tr>
                 <td class="package-id">145</td>
-                <td>R-12 St-4 Brimmighan</td>
-                <td>100</td>
+                <td>Abdul Moiz</td>
+                <td>140</td>
+                <td>Ali Mehdi</td>
                 <td>Out for Delivery</td>
                 <td class="action-buttons">
                     <button class="btn btn-view">View</button>
@@ -96,18 +106,23 @@
             </tr>
 
             <tr class="accordion-content">
-                <td colspan="5">
+                <td colspan="6">
                     <div class="field-row">
                         <div class="field"><strong>Package ID:</strong> 145</div>
-                        <div class="field"><strong>Pickup Address:</strong> 123 Main St, Brimmighan</div>
+                        <div class="field"><strong>Recipient Name:</strong> Abdul Moiz</div>
                     </div>
                     <div class="field-row">
                         <div class="field"><strong>Pickup Time:</strong> 10:00 AM, 24th June 2024</div>
-                        <div class="field"><strong>Delivery Address:</strong> R-12 St-4 Brimmighan</div>
+                        <div class="field"><strong>Pickup Address:</strong> 123 Main St, Brimmighan</div>
                     </div>
                     <div class="field-row">
+                        <div class="field"><strong>Delivery Address:</strong> R-12 St-4 Brimmighan</div>
+                        <div class="field"><strong>Driver ID:</strong> 140</div>
+                    </div>
+                    <div class="field-row">
+                        <div class="field"><strong>Driver Name:</strong> Ali Mehdi</div>
                         <div class="field"><strong>Size:</strong> Medium</div>
-                        <div class="field"><strong>Driver ID:</strong> 100</div>
+
                     </div>
                     <div class="field-row">
                         <div class="field"><strong>Vehicle Type:</strong> Van</div>
@@ -117,34 +132,42 @@
             </tr>
             
             <tr class="accordion-content">
-                <td colspan="5">
+                <td colspan="6">
                     <div class="form-group">
                         <label for="update-package-id">Package ID:</label>
                         <input type="text" id="update-package-id" value="145">
                     </div>
                     <div class="form-group">
-                        <label for="update-pickup-address">Pickup Address:</label>
-                        <input type="text" id="update-pickup-address" value="123 Main St, Brimmighan">
+                        <label for="update-recipient-name">Recipient Name:</label>
+                        <input type="text" id="update-recipient-name" value="Abdul Moiz">
                     </div>
                     <div class="form-group">
                         <label for="update-pickup-time">Pickup Time:</label>
                         <input type="text" id="update-pickup-time" value="10:00 AM, 24th June 2024">
                     </div>
                     <div class="form-group">
-                        <label for="update-delivery-address">Delivery Address:</label>
-                        <input type="text" id="update-delivery-address" value="R-12 St-4 Brimmighan">
+                        <label for="update-pickup-address">Pickup Address:</label>
+                        <input type="text" id="update-pickup-address" value="123 Main St, Brimmighan">
                     </div>
                     <div class="form-group">
-                        <label for="update-size">Size:</label>
-                        <input type="text" id="update-size" value="Medium">
+                        <label for="update-delivery-address">Delivery Address:</label>
+                        <input type="text" id="update-delivery-address" value="R-12 St-4 Brimmighan">
                     </div>
                     <div class="form-group">
                         <label for="update-driver-id">Driver ID:</label>
                         <input type="text" id="update-driver-id" value="100">
                     </div>
                     <div class="form-group">
+                        <label for="update-driver-name">Driver Name:</label>
+                        <input type="text" id="update-driver-name" value="Ali Mehdi">
+                    </div>
+                    <div class="form-group">
                         <label for="update-vehicle-type">Vehicle Type:</label>
                         <input type="text" id="update-vehicle-type" value="Van">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-size">Size:</label>
+                        <input type="text" id="update-size" value="Medium">
                     </div>
                     <div class="form-group">
                         <label for="update-status">Status:</label>
@@ -156,7 +179,7 @@
         </table>
     </section>
 
-    <!-- Modal -->
+    <!-- modal for delete button -->
     <div id="deleteModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -166,6 +189,7 @@
         </div>
     </div>
     
+    <!-- history shipments section -->
     <section id="history" class="content-section">
         <h2>Shipment History</h2>
         <h3>View all your past shipments at one place.</h3>
@@ -198,6 +222,10 @@
                                 <div class="field"><strong>Delivery Time:</strong> 01:40 PM</div>
                             </div>
                             <div class="field-row">
+                                <div class="field"><strong>Driver ID:</strong> 140</div>
+                                <div class="field"><strong>Driver Name:</strong> Mehdi</div>
+                            </div>
+                            <div class="field-row">
                                 <div class="field"><strong>Size:</strong> Medium</div>
                                 <div class="field"><strong>Status:</strong> Delivered</div>
                             </div>
@@ -222,6 +250,10 @@
                             <div class="field-row">
                                 <div class="field"><strong>Delivery Address:</strong> R-25 St-2 California</div>
                                 <div class="field"><strong>Delivery Time:</strong> 05:30 PM</div>
+                            </div>
+                            <div class="field-row">
+                                <div class="field"><strong>Driver ID:</strong> 140</div>
+                                <div class="field"><strong>Driver Name:</strong> Mehdi</div>
                             </div>
                             <div class="field-row">
                                 <div class="field"><strong>Size:</strong> Large</div>
@@ -249,6 +281,10 @@
                                 <div class="field"><strong>Delivery Time:</strong> 11:10 PM</div>
                             </div>
                             <div class="field-row">
+                                <div class="field"><strong>Driver ID:</strong> 140</div>
+                                <div class="field"><strong>Driver Name:</strong> Mehdi</div>
+                            </div>
+                            <div class="field-row">
                                 <div class="field"><strong>Size:</strong> Small</div>
                                 <div class="field"><strong>Status:</strong> Cancelled</div>
                             </div>
@@ -258,7 +294,8 @@
             </table>
         </div>
     </section>
-        
+  
+    <!-- place order section -->
     <section id="schedule-pickup" class="content-section">
         <h2>Schedule Pickup</h2>
         <h3>Are you ready to place an order? Click to get started.</h3>
@@ -270,8 +307,8 @@
                     <input type="text" id="sender-name" name="sender-name" placeholder="eg: Alan" required>
                 </span>
                 <span>
-                    <label for="receipient-name">Receipient Name</label>
-                    <input type="text" id="receipient-name" name="receipient-name" placeholder="eg: Fisher" required>
+                    <label for="recipient-name">Recipient Name</label>
+                    <input type="text" id="recipient-name" name="recipient-name" placeholder="eg: Fisher" required>
                 </span>
             </div>
             <div class="form-row">
@@ -280,8 +317,8 @@
                     <input type="text" id="sender-phonenumber" name="sender-phonenumber" placeholder="eg: 777-543-232" required>
                 </span>
                 <span>
-                    <label for="receipient-phonenumber">Receipients Phone Number</label>
-                    <input type="text" id="receipient-phonenumber" name="receipient-phonenumber" placeholder="eg: 777-543-232" required>
+                    <label for="recipient-phonenumber">Recipients Phone Number</label>
+                    <input type="text" id="recipient-phonenumber" name="recipient-phonenumber" placeholder="eg: 777-543-232" required>
                 </span>
             </div>
             <div class="form-row">
@@ -318,7 +355,8 @@
         </div>
     </section>
     
-    
+ 
+    <!-- customer support section -->
     <section id="support" class="content-section">
         <h2>Customer Support</h2>
         <div class="support-section-body">
